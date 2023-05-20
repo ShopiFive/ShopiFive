@@ -10,6 +10,11 @@
 }
 
 .subheader {
+  .Polaris-Box {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -18,5 +23,46 @@
 
   .Polaris-Link {
     text-decoration: none;
+  }
+
+  &__banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+  }
+
+  .Polaris-Banner {
+    background-color: black;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    width: 21.5rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    padding-inline: 0;
+  }
+
+  .Polaris-Icon,
+  .Polaris-Button--iconOnly {
+    display: none;
+  }
+
+  &__bannertext {
+    font-size: 0.7rem;
+    width: 13rem;
+  }
+
+  .Polaris-Button {
+    background-color: $primary-color-green;
+    color: $primary-color-white;
+    border: none;
+    height: 1rem;
+    width: 5rem;
+    padding: 0;
+
+    .Polaris-Button__Text {
+      font-size: 0.7rem;
+    }
   }
 }

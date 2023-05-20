@@ -7,6 +7,7 @@ import MobileNav from "./components/MobileNav/MobileNav";
 function App() {
   return (
     <BrowserRouter>
+      <MobileNav />
       <Routes>
         <Route />
       </Routes>

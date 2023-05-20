@@ -1,10 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
+import "@shopify/polaris/build/esm/styles.css";
+
+import MobileNav from "./components/MobileNav/MobileNav";
 
 function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

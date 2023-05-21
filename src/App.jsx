@@ -4,6 +4,7 @@ import "@shopify/polaris/build/esm/styles.css";
 
 import MobileNav from "./components/MobileNav/MobileNav";
 import HomePage from "./pages/HomePage";
+import MyPlanPage from "./pages/MyPlanPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <MobileNav />
       <Routes>
         <Route path="/home" element={<HomePage />} />
+        <Route path="/myplan" element={<MyPlanPage />} />
       </Routes>
     </BrowserRouter>
   );

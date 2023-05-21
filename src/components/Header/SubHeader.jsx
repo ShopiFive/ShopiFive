@@ -7,7 +7,7 @@ export default function SubHeader({ text, link }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/my-plan");
+    navigate("/myplan");
   };
 
   return (

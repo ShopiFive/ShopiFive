@@ -3,7 +3,7 @@ import "./App.scss";
 import "@shopify/polaris/build/esm/styles.css";
 
 import MobileNav from "./components/MobileNav/MobileNav";
-import HomePage from "./Pages/HomePage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (

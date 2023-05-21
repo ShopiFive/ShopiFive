@@ -1,0 +1,14 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.img-container {
+    height: 6rem;
+    width: 100%;
+    background-color: $primary-color-gray;
+    border-radius: 1rem;
+}
+
+.bold {
+    font-weight: $type-face-bold;
+}

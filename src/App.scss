@@ -1,3 +1,7 @@
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
 // -- global resets --
 
 * {
@@ -10,4 +14,8 @@
 html {
   font-size: 62.5%;
   height: 100%;
+}
+
+body {
+  font-family: $type-face, sans-serif;
 }

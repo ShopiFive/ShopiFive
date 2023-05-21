@@ -1,0 +1,18 @@
+@use "./fonts" as *;
+
+// Primary Colors
+$primary-color-black: black;
+$primary-color-green: #377e62;
+$primary-color-gray: #5c5f61;
+$primary-color-white: #fff;
+
+// Secondary Colors
+$seconday-color-lightgray: #95989b;
+
+//break points
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Typeface
+$type-face: "Inter";
+$type-face-bold: "Inter-Bold";

@@ -1,0 +1,44 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.setup {
+  width: 100%;
+  height: 100%;
+  background-color: $primary-color-white;
+
+  .Polaris-LegacyCard {
+    box-shadow: none;
+  }
+
+  .Polaris-MediaCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .Polaris-MediaCard__MediaContainer:not(.Polaris-MediaCard--portrait) {
+      flex-basis: 20%;
+    }
+
+    .Polaris-Text--headingMd {
+      font-weight: 500;
+    }
+
+    .Polaris-LegacyStack__Item {
+      color: $primary-color-gray;
+    }
+  }
+
+  &__image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: lightgray;
+    margin: 1rem;
+  }
+
+  .Polaris-ProgressBar--sizeMedium {
+    height: 0.2rem;
+    margin: 1rem 0;
+  }
+}

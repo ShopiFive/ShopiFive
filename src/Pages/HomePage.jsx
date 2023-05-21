@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import SubHeader from "../components/Header/SubHeader";
+import SetupGuide from "../components/SetupGuide/SetupGuide";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         link="Select a Plan"
         color="inerative"
       />
+      <SetupGuide />
     </>
   );
 }

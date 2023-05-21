@@ -56,7 +56,7 @@ export default function BusinessForm({ title, inputs, selectedResponse }) {
                 <Button
                   primary
                   onClick={() => {
-                    navigate("/myplan/form");
+                    navigate("/home/myplan/form");
                   }}
                 >
                   Begin

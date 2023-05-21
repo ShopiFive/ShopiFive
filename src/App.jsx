@@ -12,7 +12,7 @@ function App() {
       <MobileNav />
       <Routes>
         <Route path="/home" element={<HomePage />} />
-        <Route path="/myplan" element={<MyPlanPage />} />
+        <Route path="/home/myplan" element={<MyPlanPage />} />
       </Routes>
     </BrowserRouter>
   );

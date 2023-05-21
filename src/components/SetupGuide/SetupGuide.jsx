@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SetupGuide.scss";
 import {
   MediaCard,
@@ -40,14 +41,14 @@ export default function Setup() {
                 {inputs.map((items, index) => {
                   return (
                     <li className="setup__list" key={index}>
-                      <div className="setup__content">
+                      <Link className="setup__content">
                         <RadioButton label={items.text} />
                         <img
                           src={rightarrow}
                           alt="Image 1"
                           className="setup__icon"
                         />
-                      </div>
+                      </Link>
                     </li>
                   );
                 })}

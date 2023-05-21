@@ -7,6 +7,12 @@
   height: 100%;
   background-color: $primary-color-white;
 
+  // ---- Polaris Box Styles -----
+
+  .Polaris-Box {
+    border: 1.5px solid #f1f2f3;
+  }
+
   .Polaris-LegacyCard {
     box-shadow: none;
   }
@@ -22,10 +28,12 @@
 
     .Polaris-Text--headingMd {
       font-weight: 500;
+      color: $primary-color-black;
     }
 
-    .Polaris-LegacyStack__Item {
-      color: $primary-color-gray;
+    .Polaris-LegacyStack__Item p {
+      font-weight: 400;
+      color: #97999b;
     }
   }
 
@@ -38,7 +46,51 @@
   }
 
   .Polaris-ProgressBar--sizeMedium {
+    width: 21rem;
     height: 0.2rem;
-    margin: 1rem 0;
+    margin: 0.5rem 1rem;
+  }
+
+  .Polaris-Text--headingXs {
+    font-weight: 400;
+    color: #97999b;
+  }
+
+  &__progresstext {
+    margin: 0.5rem 1rem;
+  }
+
+  &__guide {
+    width: 22rem;
+    height: 25rem;
+    margin: 2rem auto;
+  }
+
+  &__inputbox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+    fill: $primary-color-gray;
+  }
+
+  .Polaris-RadioButton__Backdrop {
+    border: 1px dashed #000;
   }
 }

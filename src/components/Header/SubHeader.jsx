@@ -18,7 +18,7 @@ export default function SubHeader({ text, link }) {
             <Text as="p">{text}</Text>
           </div>
           <div className="subheader__items">
-            <Link url="#">{link}</Link>
+            <Link url="https://www.shopify.com/ca/pricing">{link}</Link>
           </div>
           <Banner onDismiss={() => {}}>
             <div className="subheader__banner">

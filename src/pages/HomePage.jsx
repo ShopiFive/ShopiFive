@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/Header/Header";
 import SubHeader from "../components/Header/SubHeader";
 import SetupGuide from "../components/SetupGuide/SetupGuide";
+import SearchBar from "../components/Search/SearchBar";
+
 
 export default function HomePage() {
   const setup = [
@@ -15,6 +17,7 @@ export default function HomePage() {
 
   return (
     <>
+      <SearchBar />
       <Header
         titleName="Home"
         text="Welcome to Shopify, My Store"

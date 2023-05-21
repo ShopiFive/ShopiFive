@@ -1,7 +1,7 @@
-import {useState, useCallback, useMemo} from 'react';
+import {useState, useCallback, useMemo, useEffect} from 'react';
 import { Autocomplete, Icon } from '@shopify/polaris';
 import { SearchMajor } from '@shopify/polaris-icons';
-import { setTimeout } from 'timers/promises';
+import "./SearchBar.scss";
 
 export default function SearchBar() {
     const deselectedOptions = useMemo(
@@ -27,7 +27,7 @@ export default function SearchBar() {
             setLoading(true)
         }
 
-        setTimeout(() => {
+        useEffect(() => {
             if (value === '') {
                 setOptions(deselectedOptions)
                 setLoading(false)
@@ -39,7 +39,7 @@ export default function SearchBar() {
             )
             setOptions(resultOptions)
             setLoading(false)
-        }, 300)
+        })
     }, [deselectedOptions, loading])
 
     const updateSelection = useCallback((selected) => {
@@ -56,7 +56,6 @@ export default function SearchBar() {
     const textField = (
         <Autocomplete.TextField
             onChange={updateText}
-            label="Search"
             value={inputValue}
             prefix={<Icon source={SearchMajor} color="base" accessibilityLabel="search field" />}
             placeholder='Go to...'
@@ -65,7 +64,7 @@ export default function SearchBar() {
     )
 
     return (
-        <div style={{height: '225px'}}>
+        <div className='search'>
             <Autocomplete
                 options={options}
                 selected={selectedOptions}

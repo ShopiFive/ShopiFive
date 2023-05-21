@@ -9,6 +9,7 @@ import {
   AlphaCard,
   LegacyStack,
   RadioButton,
+  Divider,
 } from "@shopify/polaris";
 
 import rightarrow from "../../assets/icons/navigate_next_24.svg";
@@ -49,6 +50,7 @@ export default function Setup() {
                           className="setup__icon"
                         />
                       </Link>
+                      <Divider />
                     </li>
                   );
                 })}

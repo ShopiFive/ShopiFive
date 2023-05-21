@@ -10,9 +10,9 @@ import {
   LegacyStack,
   RadioButton,
   Divider,
+  Icon,
 } from "@shopify/polaris";
-
-import rightarrow from "../../assets/icons/navigate_next_24.svg";
+import { ChevronRightMinor } from "@shopify/polaris-icons";
 
 export default function Setup() {
   const inputs = [
@@ -44,11 +44,9 @@ export default function Setup() {
                     <li className="setup__list" key={index}>
                       <Link className="setup__content">
                         <RadioButton label={items.text} />
-                        <img
-                          src={rightarrow}
-                          alt="Image 1"
-                          className="setup__icon"
-                        />
+                        <div className="setup__icon">
+                          <Icon source={ChevronRightMinor} color="subdued" />
+                        </div>
                       </Link>
                       <Divider />
                     </li>

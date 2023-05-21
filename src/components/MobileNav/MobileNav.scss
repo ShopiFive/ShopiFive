@@ -12,6 +12,7 @@
     left: 0;
     display: flex;
     justify-content: space-around;
+    z-index: 2;
   }
 
   &__list {
@@ -36,18 +37,19 @@
   }
 
   &__icon {
-    width: 1.7rem;
-    height: 1.9rem;
+    width: 1.2rem;
+    height: 1.6rem;
   }
 
   &__text {
     color: $seconday-color-lightgray;
+    font-size: 0.8rem;
     font-weight: 500;
   }
 
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
     fill: $primary-color-gray;
   }
 

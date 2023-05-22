@@ -1,4 +1,4 @@
-import {Box, Button, Divider, ProgressBar, Select, Text} from '@shopify/polaris';
+import {Box, Button, Divider, Link, ProgressBar, Select, Text, VerticalStack} from '@shopify/polaris';
 import {useState, useCallback} from 'react';
 import "./Q2.scss";
 
@@ -30,11 +30,11 @@ export default function Q2() {
                 <ProgressBar progress={30} size='small' color='primary' />
             </div>
             <Box className='q2__text'>
-                <Text variant="heading3xl" as="h2" fontWeight="medium">
+                <Text variant="heading2xl" as="h2" fontWeight="medium">
                     What industry is your company involved in?
                 </Text>
-                <Text variant="bodySm" as="p" color='subdued'>
-                    e.g. "fitness" or "travel and hospitality".
+                <Text className='q2__text--subdued' variant="bodySm" as="p" color='subdued'>
+                    e.g. "fitness" or "travel and hospitality"
                 </Text>
                 <Divider />
                 <Select
@@ -43,9 +43,16 @@ export default function Q2() {
                     onChange={handleSelectChange}
                     value={selected}
                 />
-                <Button primary disabled={!selected}>
-                    Next
-                </Button>
+                <div className='q2__text--btn'>
+                    <VerticalStack gap="2" inlineAlign="center">
+                        <Button primary disabled={!selected}>
+                            Next
+                        </Button>
+                        <Link monochrome url='#'>
+                            Save and Exit
+                        </Link>
+                    </VerticalStack>
+                </div>
             </Box>
         </Box>
     )

@@ -38,12 +38,12 @@ export default function Q2() {
                 </Text>
                 <Divider />
                 <Select
-                    label='Search or select an industry'
+                    placeholder='Search or select an industry'
                     options={options}
                     onChange={handleSelectChange}
                     value={selected}
                 />
-                <Button primary disabled>
+                <Button primary disabled={!selected}>
                     Next
                 </Button>
             </Box>

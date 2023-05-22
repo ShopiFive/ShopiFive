@@ -27,8 +27,6 @@ export default function IntroductionForm({ onNext }) {
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
-    const inputResponse = businessStructureResponse[option].response;
-    onNext(inputResponse);
   };
 
   return (
@@ -52,6 +50,7 @@ export default function IntroductionForm({ onNext }) {
             onOptionChange={handleOptionChange}
             linkTitle="Save and Exit"
             containerClass="intro__radio"
+            onNext={onNext}
           />
         </Box>
       </div>

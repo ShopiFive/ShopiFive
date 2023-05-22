@@ -20,6 +20,7 @@ export default function RadioContainer({
   onOptionChange,
   linkTitle,
   containerClass,
+  onNext,
 }) {
   const navigate = useNavigate();
 
@@ -82,7 +83,11 @@ export default function RadioContainer({
                 </Button>
               </>
             ) : (
-              <Button primary disabled={selectedOption === null}>
+              <Button
+                primary
+                disabled={selectedOption === null}
+                onClick={onNext}
+              >
                 Next
               </Button>
             )}

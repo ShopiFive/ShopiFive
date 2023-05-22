@@ -7,72 +7,96 @@ import {
   RadioButton,
   Divider,
   Button,
+  Icon,
+  Tooltip,
 } from "@shopify/polaris";
-import "./BusinessForm.scss";
+import "./RadioContainer.scss";
 
-export default function BusinessForm({ title, inputs, selectedResponse }) {
+export default function RadioContainer({
+  title,
+  subTitle,
+  inputs,
+  selectedResponse,
+  onOptionChange,
+  linkTitle,
+  containerClass,
+  onNext,
+}) {
   const navigate = useNavigate();
 
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
+    onOptionChange(option);
   };
 
   const selectedInput =
     selectedOption !== null ? inputs[selectedOption].response : "";
 
   return (
-    <div className="form">
+    <form className={`radio ${containerClass}`}>
       <Box>
         <Text variant="headingXl" as="h4">
           {title}
         </Text>
+        <p className="radio__subtitle">{subTitle}</p>
         <LegacyStack vertical>
-          <ul className="form__inputbox">
-            {inputs.map((items, index) => {
+          <ul className="radio__inputbox">
+            {inputs.map((item, index) => {
               return (
                 <React.Fragment key={index}>
                   <Divider />
-                  <li className="form__list" key={index}>
-                    <div className="form__content">
+                  <li className="radio__list" key={index}>
+                    <div className="radio__content">
                       <RadioButton
-                        label={items.response}
+                        label={item.response}
                         checked={selectedOption === index}
                         onChange={() => handleOptionChange(index)}
                       />
+                      {item.icon && (
+                        <Tooltip content={item.info}>
+                          <span>
+                            <Icon source={item.icon} color="base" />
+                          </span>
+                        </Tooltip>
+                      )}
                     </div>
                   </li>
                 </React.Fragment>
               );
             })}
           </ul>
-          <div className="form__cta">
+          <div className="radio__cta">
             {selectedInput === selectedResponse ? (
               <>
-                <p className="form__msg">
+                <p className="radio__msg">
                   We recommend creating a new business plan.
                 </p>
                 <Button
                   primary
                   onClick={() => {
-                    navigate("/home/myplan/form");
+                    navigate("/home/newplan");
                   }}
                 >
                   Begin
                 </Button>
               </>
             ) : (
-              <Button primary disabled={!selectedOption}>
+              <Button
+                primary
+                disabled={selectedOption === null}
+                onClick={onNext}
+              >
                 Next
               </Button>
             )}
-            <Link className="form__cancel" to="/home">
-              Cancel
+            <Link className="radio__cancel" to="/home">
+              {linkTitle}
             </Link>
           </div>
         </LegacyStack>
       </Box>
-    </div>
+    </form>
   );
 }

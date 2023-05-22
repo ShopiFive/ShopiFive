@@ -8,6 +8,7 @@ import MyPlanPage from "./pages/MyPlanPage";
 import BusinessPlanQ3 from "./pages/BusinessPlanQ3";
 import MissionStatementPage from "./pages/MissionStatementPage";
 import VisionStatementPage from "./pages/VisionStatementPage";
+import MultiStepForm from "./pages/MultiStepForm";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/home/q3" element={<BusinessPlanQ3 />} />
         <Route path="/home/mission" element={<MissionStatementPage />} />
         <Route path="/home/vision" element={<VisionStatementPage />} />
+        <Route path="/home/newplan" element={<MultiStepForm />} />
       </Routes>
     </BrowserRouter>
   );

@@ -31,7 +31,7 @@ export default function HomePage() {
       />
       <SetupGuide
         title="Setup Guide"
-        description="Your trail ends tomorrow"
+        description="Your trial ends tomorrow"
         progressText="0 of 6 tasks complete"
         inputs={setup}
       />

@@ -7,9 +7,8 @@ import Header from "../Header/Header";
 import SearchBar from "../Search/SearchBar";
 import RadioContainer from "../RadioContainer/RadioContainer";
 
-export default function IntroductionForm() {
+export default function IntroductionForm({ onNext }) {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [data, setData] = useState("");
 
   const businessStructureResponse = [
     { response: "Just me (Sole Proprietorship)" },
@@ -29,12 +28,8 @@ export default function IntroductionForm() {
   const handleOptionChange = (option) => {
     setSelectedOption(option);
     const inputResponse = businessStructureResponse[option].response;
-    setData(inputResponse);
+    onNext(inputResponse);
   };
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   return (
     <>

@@ -2,42 +2,35 @@ import React, { useState } from "react";
 import IntroductionForm from "../components/IntroductionForm/IntroductionForm";
 
 export default function MultiStepForm() {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState({
-    businessStructure: "",
-  });
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({});
 
-  // Function to handle moving to the next step
-  const nextStep = () => {
-    setCurrentStep(currentStep + 1);
+  const handleNext = (data) => {
+    // Update the form data with the current step's data
+    setFormData((prevData) => ({
+      ...prevData,
+      step1: data,
+    }));
+
+    // Proceed to the next step
+    setStep((prevStep) => prevStep + 1);
   };
 
-  // Function to handle moving to the previous step
-  const prevStep = () => {
-    setCurrentStep(currentStep - 1);
-  };
-
-  // Function to handle updating form data
-  const updateFormData = (key, value) => {
-    setFormData({ ...formData, [key]: value });
-  };
-
-  // Function to handle form submission
-  const submitForm = () => {
-    // Perform form submission logic here
-    console.log("Form submitted:", formData);
+  // Render the appropriate step based on the current step value
+  const renderStep = () => {
+    switch (step) {
+      case 1:
+        return <IntroductionForm onNext={handleNext} />;
+      // Add more cases for other steps
+      default:
+        return null;
+    }
   };
 
   return (
     <div>
-      {currentStep === 1 && (
-        <IntroductionForm
-          formData={formData}
-          updateFormData={updateFormData}
-          nextStep={nextStep}
-        />
-      )}
-      {/* Add more steps here as needed */}
+      <h1>Multi-Step Form</h1>
+      {renderStep()}
     </div>
   );
 }

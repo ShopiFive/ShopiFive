@@ -7,8 +7,6 @@ import {
   Text,
   AlphaCard,
   LegacyStack,
-  RadioButton,
-  List,
   Divider,
   Icon,
 } from "@shopify/polaris";

@@ -8,19 +8,26 @@ import {
   AlphaCard,
   LegacyStack,
   RadioButton,
+  List,
   Divider,
   Icon,
 } from "@shopify/polaris";
 import { ChevronRightMinor } from "@shopify/polaris-icons";
 
-export default function Setup({ title, description, progressText, inputs }) {
+export default function Setup({
+  title,
+  description,
+  progress,
+  progressText,
+  inputs,
+}) {
   return (
     <Box className="setup">
       <MediaCard title={title} description={description}>
         <div className="setup__image" />
       </MediaCard>
       <div className="setup__progress">
-        <ProgressBar progress={16} color="primary" />
+        <ProgressBar progress={progress} color="primary" />
         <div className="setup__progresstext">
           <Text variant="headingXs" as="h6" color="subdued">
             {progressText}
@@ -34,7 +41,9 @@ export default function Setup({ title, description, progressText, inputs }) {
                   return (
                     <li className="setup__list" key={index}>
                       <div className="setup__content">
-                        <RadioButton label={items.text} />
+                        <div className="setup__textbox">
+                          <p>{items.text}</p>
+                        </div>
                         <div className="setup__icon">
                           <Icon source={ChevronRightMinor} color="subdued" />
                         </div>

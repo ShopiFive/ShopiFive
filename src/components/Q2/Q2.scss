@@ -1,0 +1,48 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.q2 {
+    margin-top: 1rem;
+
+    &__progress {
+        height: .25rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        &--btn {
+            margin-top: 10rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+.Polaris-Text--bodySm {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-style: italic;
+}
+
+.Polaris-Divider {
+    padding-bottom: 1rem;
+}
+
+.Polaris-Select {
+    color: $primary-color-gray;
+
+    &__Backdrop {
+        background-color: $seconday-color-lightgray;
+        opacity: 15%;
+    }
+}
+
+.Polaris-Button {
+    width: 8rem;
+}

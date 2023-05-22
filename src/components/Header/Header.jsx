@@ -2,7 +2,7 @@ import React from "react";
 import { AlphaCard, Divider, Text } from "@shopify/polaris";
 import "./Header.scss";
 
-export default function Header({ titleName, text, color }) {
+export default function Header({ titleName, text, color, showDivider }) {
   return (
     <div className="header">
       <AlphaCard>
@@ -13,7 +13,7 @@ export default function Header({ titleName, text, color }) {
           {text}
         </Text>
       </AlphaCard>
-      <Divider color="subdued" />
+      {showDivider && <Divider color="subdued" />}
     </div>
   );
 }

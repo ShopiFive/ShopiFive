@@ -36,6 +36,7 @@ export default function IntroductionForm({ onNext }) {
         titleName="My Business Plan"
         text="Module 1 - Introduction"
         color="subdued"
+        showDivider={true}
       />
       <div className="intro">
         <Box>

@@ -27,10 +27,5 @@ export default function MultiStepForm() {
     }
   };
 
-  return (
-    <div>
-      <h1>Multi-Step Form</h1>
-      {renderStep()}
-    </div>
-  );
+  return <div>{renderStep()}</div>;
 }

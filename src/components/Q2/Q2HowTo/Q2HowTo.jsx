@@ -1,4 +1,5 @@
 import {AlphaCard, Avatar, Box, Button, HorizontalStack, List, Text} from '@shopify/polaris';
+import {ClockMajor} from '@shopify/polaris-icons'
 import Graphic from '../../../assets/images/how-to-write-a-business-plan.webp'
 import "./Q2HowTo.scss";
 
@@ -26,7 +27,7 @@ export default function Q2HowTo() {
                             5-10 minutes
                         </Text>
                     </div>
-                    <Avatar source='' />
+                    <Avatar source={ClockMajor} />
                 </HorizontalStack>
                 <Button primary>Get started</Button>
             </Box>

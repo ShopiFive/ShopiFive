@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { AlphaCard, Button, Text } from "@shopify/polaris";
 import "./MyBusinessPlan.scss";
-import BusinessForm from "../BusinessForm/BusinessForm";
+import RadioContainer from "../RadioContainer/RadioContainer";
 
 export default function MyBusinessPlan() {
   const [openForm, setOpenForm] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const getStartedResponse = [
     { response: "No, I haven't." },
@@ -13,8 +14,12 @@ export default function MyBusinessPlan() {
     { response: "I don't know." },
   ];
 
-  const handleButton = () => {
+  const handleGetStarted = () => {
     setOpenForm(true);
+  };
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
   };
 
   return (
@@ -38,7 +43,7 @@ export default function MyBusinessPlan() {
             </div>
           </div>
           <div className="card__button">
-            <Button primary onClick={handleButton}>
+            <Button primary onClick={handleGetStarted}>
               Get Started
             </Button>
           </div>
@@ -46,10 +51,13 @@ export default function MyBusinessPlan() {
       </div>
       {openForm && (
         <div className="card__form">
-          <BusinessForm
+          <RadioContainer
             title="Have you already created a business plan for your company?"
             inputs={getStartedResponse}
             selectedResponse="No, I haven't."
+            linkTitle="Cancel"
+            selectedOption={selectedOption}
+            onOptionChange={handleOptionChange}
           />
         </div>
       )}

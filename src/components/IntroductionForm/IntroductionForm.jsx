@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, ProgressBar } from "@shopify/polaris";
 import { InfoMinor } from "@shopify/polaris-icons";
 import "./IntroductionForm.scss";

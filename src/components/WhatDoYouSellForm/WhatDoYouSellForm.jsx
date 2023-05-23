@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
     Box,
@@ -6,9 +6,11 @@ import {
     LegacyStack,
     RadioButton,
     Divider,
+    ProgressBar,
     Button,
     TextField,
     Icon,
+    Select
 } from "@shopify/polaris";
 import { MobilePlusMajor } from '@shopify/polaris-icons';
 import "./WhatDoYouSellForm.scss";
@@ -16,12 +18,19 @@ import "./WhatDoYouSellForm.scss";
 export default function WhatDoYouSellForm() {
     const navigate = useNavigate();
 
+
     const [selectedOption, setSelectedOption] = useState(null);
     const [showNewServiceField, setShowNewServiceField] = useState(false);
+    const [selectedService, setSelectedService] = useState();
+
 
     const handleOptionChange = (option) => {
         setSelectedOption(option);
     };
+
+
+    const handleServiceChange = useCallback((value) => setSelectedService(value), []);
+
 
     const inputs = [
         { response: 'Products' },
@@ -29,13 +38,37 @@ export default function WhatDoYouSellForm() {
         { response: 'Both' }
     ];
 
+
+    const serviceOptions = [
+        { label: 'Education', value: 'education' },
+        { label: 'Clothing', value: 'clothing' },
+        { label: 'Footware', value: 'footware' },
+        { label: 'Software', value: 'software' },
+        { label: 'Technology', value: 'technology' },
+        { label: 'Retail', value: 'retail' },
+        { label: 'Cosmetics', value: 'cosmetics' },
+        { label: 'Health & Wellness', value: 'health_wellness' },
+        { label: 'Fitness', value: 'fitness' },
+        { label: 'Travel & Hospitality', value: 'travel_hospitality' },
+        { label: 'Food', value: 'food' },
+        { label: 'Accessories', value: 'accessories' },
+        { label: 'Toys', value: 'toys' },
+        { label: 'Arts & Crafts', value: 'arts_crafts' },
+        { label: 'Furniture', value: 'furniture' },
+    ];
+
+
     const selectedResponse = 'Both';
+
 
     const selectedInput = selectedOption !== null ? inputs[selectedOption].response : "";
 
     return (
         <div className="form">
             <Box>
+                <div className="form__progressbox">
+                    <ProgressBar progress={50} color="primary" />
+                </div>
                 <div className="form__header">
                     <Text variant="headingXl" as="h4">
                         What do you sell?
@@ -69,6 +102,12 @@ export default function WhatDoYouSellForm() {
                         </Text>
                         <Divider />
                         <div className="add-service-wrapper">
+                            <Select
+                                placeholder='Search or select a service'
+                                options={serviceOptions}
+                                onChange={handleServiceChange}
+                                value={selectedService}
+                            />
                             <div className="add-service" onClick={() => setShowNewServiceField(true)}>
                                 <Icon source={MobilePlusMajor} />
                                 <span>Add another service</span>
@@ -97,12 +136,12 @@ export default function WhatDoYouSellForm() {
                                 </Button>
                             </>
                         ) : (
-                            <Button primary disabled={!selectedOption}>
+                            <Button primary disabled={!selectedService && !showNewServiceField}>
                                 Next
                             </Button>
                         )}
                         <Link className="form__cancel" to="/home">
-                            Cancel
+                            Save and Exit
                         </Link>
                     </div>
                 </LegacyStack>

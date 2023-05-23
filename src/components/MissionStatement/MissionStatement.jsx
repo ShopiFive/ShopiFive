@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { VideoThumbnail, TextField, Button } from "@shopify/polaris";
+import { VideoThumbnail, TextField, Button, ProgressBar } from "@shopify/polaris";
 import thumbnailUrl from "./../../assets/images/share-image-generic-bd3ce342a910c2489b672b00e45c74b1b1548662c41448e456547fa5b6e0f585.png"
 import "./MissionStatement.scss"
 
@@ -13,6 +13,9 @@ export default function MissionStatement() {
     };
     return (
         <div className="mission-statement" style={{ backgroundColor: "#FFFFFF" }}>
+            <div className="mission-statement__progressbox">
+                <ProgressBar progress={75} color="primary" className="custom-progress-bar" />
+            </div>
             <h2>Write a Mission Statement</h2>
             <p>Create a company mission statement that captures your purpose and guides your journey towards success</p>
             <p className="subdued">e.g. "Paw Print Posts mission is to create personalized connections through custom paw print greeting cards."</p>
@@ -35,7 +38,7 @@ export default function MissionStatement() {
                 <Button
                     primary
                     onClick={() => {
-                        navigate("/home/vision"); 
+                        navigate("/home/vision");
                     }}
                     disabled={!missionStatement}
                 >

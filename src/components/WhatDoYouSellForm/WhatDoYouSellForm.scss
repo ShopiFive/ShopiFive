@@ -4,7 +4,27 @@
 
 .form {
     height: 35rem;
-    margin: 2rem 0 0;
+
+    &__progressbox {
+        margin-bottom: 1rem;
+    }
+
+    .Polaris-ProgressBar--sizeMedium {
+        width: 90%;
+        height: 0.2rem;
+        margin: 0 auto;
+    }
+
+    .Polaris-Select {
+        color: $primary-color-gray;
+        width: 100%;
+
+        &__Backdrop {
+            background-color: $seconday-color-lightgray;
+            opacity: 15%;
+        }
+    }
+
 
     .Polaris-Box {
         background-color: $primary-color-white;
@@ -49,20 +69,21 @@
     }
 
     &__footer {
+        margin-left: 1rem;
+        margin-right: 1rem;
+
         .form__footer-heading {
             font-weight: 400;
             font-size: 1em;
-            margin-left: 2rem; // adjusted the margin
+            margin-left: 2rem;
             margin-bottom: -1rem;
         }
 
         .add-service-wrapper {
-            margin-left: 2rem;
-            margin-right: 2rem;
 
             .add-service {
                 display: flex;
-                align-items: center; // Use align-items: center to align items vertically within .add-service
+                align-items: center;
                 cursor: pointer;
                 font-size: 0.8em;
 
@@ -75,6 +96,7 @@
                     color: blue;
                 }
             }
+
 
             .new-service-field {
                 display: flex;
@@ -93,11 +115,11 @@
 
                 .Polaris-TextField {
                     width: 100%;
-                
+
                     & .Polaris-TextField__Input {
                         background-color: #F0F0F0;
-                        border: 1px solid #F0F0F0;  // Add border color to match the background
-                        color: #333; // Change the input text color
+                        border: 1px solid #F0F0F0;
+                        color: #333;
                     }
                 }
             }

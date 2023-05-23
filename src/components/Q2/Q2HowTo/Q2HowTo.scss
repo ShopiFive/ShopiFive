@@ -1,23 +1,31 @@
-@use "../../styles/partials/fonts" as *;
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
 
 .howto-card {
     margin-left: 1rem;
     margin-right: 1rem;
 
     &__img-container {
-        height: 8rem;
+        height: 10rem;
         width: 100%;
         background-color: $seconday-color-lightgray;
         border-radius: .5rem;
+        @media (min-width: 499px) {
+            height: 12rem;
+        }
     }
 
     &__text-container {
         padding-top: 1rem;
         padding-left: 2rem;
         padding-right: 2rem;
+        padding-bottom: 0.5rem;
     }
+}
+
+.push {
+    height: 12rem;
 }
 
 .Polaris-Box {
@@ -43,6 +51,12 @@
 }
 
 .Polaris-HorizontalStack {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.Polaris-Icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    margin-right: 1rem;
 }

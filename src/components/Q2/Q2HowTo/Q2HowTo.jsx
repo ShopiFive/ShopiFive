@@ -1,10 +1,13 @@
-import {AlphaCard, Avatar, Box, Button, HorizontalStack, List, Text} from '@shopify/polaris';
+import {AlphaCard, Box, Button, HorizontalStack, Icon, List, Text} from '@shopify/polaris';
+import {ClockMajor} from '@shopify/polaris-icons'
+import Graphic from '../../../assets/images/how-to-write-a-business-plan.webp'
 import "./Q2HowTo.scss";
 
-export default function Q2HowTo() {
+export default function Q2HowTo({ handleClick }) {
     return (
+        <>
         <AlphaCard>
-            <img className='howto-card__img-container' />
+            <img src={Graphic} alt='business plan illustration' className='howto-card__img-container' />
             <Box className='howto-card__text-container'>
                 <Text className='howto-card__text-container--header' variant="headingMd" as="h3">
                     You Will Learn:
@@ -25,10 +28,14 @@ export default function Q2HowTo() {
                             5-10 minutes
                         </Text>
                     </div>
-                    <Avatar source='' />
+                    <Icon color='base' source={ClockMajor} />
                 </HorizontalStack>
-                <Button primary>Get started</Button>
+                <HorizontalStack align='center'>
+                    <Button primary onClick={handleClick}>Get started</Button>
+                </HorizontalStack>
             </Box>
         </AlphaCard>
+        <div className='push'></div>
+        </>
     )
 }

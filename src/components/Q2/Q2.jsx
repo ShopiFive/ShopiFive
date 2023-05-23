@@ -1,59 +1,29 @@
-import {Box, Button, Divider, Link, ProgressBar, Select, Text, VerticalStack} from '@shopify/polaris';
-import {useState, useCallback} from 'react';
-import "./Q2.scss";
+import { useState } from "react";
+import SearchBar from "../Search/SearchBar";
+import Header from "../Header/Header";
+import MobileNav from '../MobileNav/MobileNav'
+import Q2HowTo from "./Q2HowTo/Q2HowTo";
+import Q2Question from './Q2Question/Q2Question'
 
-export default function Q2() {
-    const [selected, setSelected] = useState()
-    const handleSelectChange = useCallback((value) => setSelected(value),
-    [],)
-    const options = [
-        {label: 'Education', value: 'education'},
-        {label: 'Clothing', value: 'clothing'},
-        {label: 'Footware', value: 'footware'},
-        {label: 'Software', value: 'software'},
-        {label: 'Technology', value: 'technology'},
-        {label: 'Retail', value: 'retail'},
-        {label: 'Cosmetics', value: 'cosmetics'},
-        {label: 'Health & Wellness', value: 'health_wellness'},
-        {label: 'Fitness', value: 'fitness'},
-        {label: 'Travel & Hospitality', value: 'travel_hospitality'},
-        {label: 'Food', value: 'food'},
-        {label: 'Accessories', value: 'accessories'},
-        {label: 'Toys', value: 'toys'},
-        {label: 'Arts & Crafts', value: 'arts_crafts'},
-        {label: 'Furniture', value: 'furniture'},
-    ]
+export default function Q2({ onNext }) {
+    const [showHowTo, setShowHowTo] = useState(true)
+
+    const handleClick = () => {
+        setShowHowTo(!showHowTo)
+    }
 
     return (
-        <Box className='q2'>
-            <div className='q2__progress'>
-                <ProgressBar progress={30} size='small' color='primary' />
-            </div>
-            <Box className='q2__text'>
-                <Text variant="heading2xl" as="h2" fontWeight="medium">
-                    What industry is your company involved in?
-                </Text>
-                <Text className='q2__text--subdued' variant="bodySm" as="p" color='subdued'>
-                    e.g. "fitness" or "travel and hospitality"
-                </Text>
-                <Divider />
-                <Select
-                    placeholder='Search or select an industry'
-                    options={options}
-                    onChange={handleSelectChange}
-                    value={selected}
-                />
-                <div className='q2__text--btn'>
-                    <VerticalStack gap="2" inlineAlign="center">
-                        <Button primary disabled={!selected}>
-                            Next
-                        </Button>
-                        <Link monochrome url='#'>
-                            Save and Exit
-                        </Link>
-                    </VerticalStack>
-                </div>
-            </Box>
-        </Box>
+        <>
+        <SearchBar />
+        <Header
+            titleName="My Business Plan"
+            text="Module 1 - Introduction"
+            color="subdued"
+        />
+        {
+            showHowTo ? <Q2HowTo handleClick={handleClick} /> : <Q2Question onNext={onNext} />
+        }
+        <MobileNav />
+        </>
     )
 }

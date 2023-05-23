@@ -33,6 +33,7 @@ export default function RadioContainer({
   };
 
   return (
+    <>
     <form className={`radio ${containerClass}`}>
       <Box>
         <Text variant="headingXl" as="h4">
@@ -102,5 +103,7 @@ export default function RadioContainer({
         </LegacyStack>
       </Box>
     </form>
+    <div className="push"></div>
+    </>
   );
 }

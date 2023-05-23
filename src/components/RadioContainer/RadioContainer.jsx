@@ -17,6 +17,7 @@ export default function RadioContainer({
   subTitle,
   inputs,
   selectedResponse,
+  showBeginButton = false,
   onOptionChange,
   linkTitle,
   containerClass,
@@ -26,8 +27,8 @@ export default function RadioContainer({
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleOptionChange = (option) => {
-    setSelectedOption(option);
+  const handleOptionChange = (option, index) => {
+    setSelectedOption(index);
     onOptionChange(option);
   };
 
@@ -52,7 +53,9 @@ export default function RadioContainer({
                       <RadioButton
                         label={item.response}
                         checked={selectedOption === index}
-                        onChange={() => handleOptionChange(index)}
+                        onChange={() =>
+                          handleOptionChange(item.response, index)
+                        }
                       />
                       {item.icon && (
                         <Tooltip content={item.info}>
@@ -69,19 +72,21 @@ export default function RadioContainer({
           </ul>
           <div className="radio__cta">
             {selectedInput === selectedResponse ? (
-              <>
-                <p className="radio__msg">
-                  We recommend creating a new business plan.
-                </p>
-                <Button
-                  primary
-                  onClick={() => {
-                    navigate("/home/newplan");
-                  }}
-                >
-                  Begin
-                </Button>
-              </>
+              showBeginButton && (
+                <>
+                  <p className="radio__msg">
+                    We recommend creating a new business plan.
+                  </p>
+                  <Button
+                    primary
+                    onClick={() => {
+                      navigate("/home/newplan");
+                    }}
+                  >
+                    Begin
+                  </Button>
+                </>
+              )
             ) : (
               <Button
                 primary

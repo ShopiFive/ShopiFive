@@ -57,6 +57,7 @@ export default function MyBusinessPlan() {
             selectedResponse="No, I haven't."
             linkTitle="Cancel"
             selectedOption={selectedOption}
+            showBeginButton={true}
             onOptionChange={handleOptionChange}
           />
         </div>

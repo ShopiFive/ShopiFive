@@ -31,14 +31,14 @@ export default function IntroductionForm({ onNext }) {
 
   return (
     <>
-      <SearchBar />
-      <Header
-        titleName="My Business Plan"
-        text="Module 1 - Introduction"
-        color="subdued"
-        showDivider={true}
-      />
       <div className="intro">
+        <SearchBar />
+        <Header
+          titleName="My Business Plan"
+          text="Module 1 - Introduction"
+          color="subdued"
+          showDivider={true}
+        />
         <Box>
           <div className="intro__progressbox">
             <ProgressBar progress={16} color="primary" />

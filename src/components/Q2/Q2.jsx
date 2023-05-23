@@ -5,7 +5,7 @@ import MobileNav from '../MobileNav/MobileNav'
 import Q2HowTo from "./Q2HowTo/Q2HowTo";
 import Q2Question from './Q2Question/Q2Question'
 
-export default function Q2() {
+export default function Q2({ onNext }) {
     const [showHowTo, setShowHowTo] = useState(true)
 
     const handleClick = () => {
@@ -21,7 +21,7 @@ export default function Q2() {
             color="subdued"
         />
         {
-            showHowTo ? <Q2HowTo handleClick={handleClick} /> : <Q2Question />
+            showHowTo ? <Q2HowTo handleClick={handleClick} /> : <Q2Question onNext={onNext} />
         }
         <MobileNav />
         </>

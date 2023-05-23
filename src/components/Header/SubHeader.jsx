@@ -26,7 +26,7 @@ export default function SubHeader({ text, link }) {
                 Extend your trial for <i>free</i> up to 3 months by creating a
                 business plan.
               </p>
-              <Button onClick={handleButtonClick}>Lean More</Button>
+              <Button onClick={handleButtonClick}>Learn More</Button>
             </div>
           </Banner>
         </div>

@@ -3,7 +3,7 @@ import {useState, useCallback} from 'react';
 import "./Q2Question.scss";
 
 export default function Q2Question() {
-    const [selected, setSelected] = useState()
+    const [selected, setSelected] = useState({ onNext })
 
     const handleSelectChange = useCallback((value) => setSelected(value),
     [],)
@@ -44,14 +44,15 @@ export default function Q2Question() {
                     options={options}
                     onChange={handleSelectChange}
                     value={selected}
+                    onNext={onNext}
                 />
                 <div className='push'></div>
                 <div className='q2__text--btn'>
                     <VerticalStack gap="3" inlineAlign="center">
-                        <Button primary disabled={!selected}>
+                        <Button primary disabled={!selected} onClick={onNext}>
                             Next
                         </Button>
-                        <Link monochrome url='#'>
+                        <Link monochrome url='/home'>
                             Save and Exit
                         </Link>
                     </VerticalStack>

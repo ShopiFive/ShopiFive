@@ -6,7 +6,6 @@ import MobileNav from "./components/MobileNav/MobileNav";
 import HomePage from "./pages/HomePage";
 import MyPlanPage from "./pages/MyPlanPage";
 import MultiStepForm from "./pages/MultiStepForm";
-import Q2 from "./components/Q2/Q2";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/home/myplan" element={<MyPlanPage />} />
         <Route path="/home/newplan" element={<MultiStepForm />} />
-        <Route path="/q2" element={<Q2 />} />
       </Routes>
     </BrowserRouter>
   );

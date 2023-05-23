@@ -3,6 +3,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .finish {
+  height: 55rem;
+
   .Polaris-Divider {
     display: none;
   }
@@ -17,5 +19,14 @@
     width: 90%;
     height: 0.2rem;
     margin: 0 auto;
+  }
+
+  &__guide {
+    height: 20rem;
+  }
+
+  &__listbullets::before {
+    content: "";
+    display: none;
   }
 }

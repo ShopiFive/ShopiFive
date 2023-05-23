@@ -24,7 +24,6 @@ export default function Setup({
   inputs,
   containerClassOne,
   containerClassTwo,
-  onNext,
 }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -101,10 +100,10 @@ export default function Setup({
                                 Edit
                               </button>
                             </div>
-                            <p>
+                            <>
                               Paw Print Post will create a world where every pet
                               is celebrated and cherished
-                            </p>
+                            </>
                           </div>
                         )}
                         <Divider />

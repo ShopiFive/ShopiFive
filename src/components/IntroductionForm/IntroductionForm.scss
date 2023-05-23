@@ -11,6 +11,7 @@
     background-color: $primary-color-white;
     height: 100%;
     width: 100%;
+    margin-left: 0;
   }
 
   &__progressbox {
@@ -25,5 +26,7 @@
 
   .Polaris-Icon--colorBase svg {
     fill: #8b8f93;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }

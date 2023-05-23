@@ -66,6 +66,11 @@
     font-size: 0.8rem;
   }
 
+  .Polaris-Button--disabled {
+    background: #979797;
+    color: $primary-color-white;
+  }
+
   &__cancel {
     color: $primary-color-black;
     text-decoration: underline;

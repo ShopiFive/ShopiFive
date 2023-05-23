@@ -4,7 +4,6 @@ import SubHeader from "../components/Header/SubHeader";
 import SetupGuide from "../components/SetupGuide/SetupGuide";
 import SearchBar from "../components/Search/SearchBar";
 
-
 export default function HomePage() {
   const setup = [
     { text: "Add your first product" },
@@ -22,6 +21,7 @@ export default function HomePage() {
         titleName="Home"
         text="Welcome to Shopify, My Store"
         color="subdued"
+        showDivider={true}
       />
       <SubHeader
         className="subheader-link"
@@ -32,6 +32,7 @@ export default function HomePage() {
       <SetupGuide
         title="Setup Guide"
         description="Your trial ends tomorrow"
+        progress={16}
         progressText="0 of 6 tasks complete"
         inputs={setup}
       />

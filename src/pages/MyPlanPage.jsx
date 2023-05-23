@@ -11,6 +11,7 @@ export default function MyPlanPage() {
         titleName="My Business Plan"
         text="Subhead here"
         color="subdued"
+        showDivider={true}
       />
       <MyBusinessPlan />
     </>

@@ -7,3 +7,11 @@
     padding-top: 20px;
     background-color: $primary-color-white;
 }
+
+.Polaris-TextField {
+    &__Backdrop {
+        background-color: $seconday-color-lightgray;
+        opacity: 15%;
+        border: none;
+    }
+}

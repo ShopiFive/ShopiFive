@@ -116,7 +116,6 @@ export default function Setup({
           </div>
         </div>
       </Box>
-      <div className="push"></div>
     </div>
   );
 }

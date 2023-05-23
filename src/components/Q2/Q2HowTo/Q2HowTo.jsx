@@ -5,6 +5,7 @@ import "./Q2HowTo.scss";
 
 export default function Q2HowTo({ handleClick }) {
     return (
+        <>
         <AlphaCard>
             <img src={Graphic} alt='business plan illustration' className='howto-card__img-container' />
             <Box className='howto-card__text-container'>
@@ -29,8 +30,12 @@ export default function Q2HowTo({ handleClick }) {
                     </div>
                     <Icon color='base' source={ClockMajor} />
                 </HorizontalStack>
-                <Button primary onClick={handleClick}>Get started</Button>
+                <HorizontalStack align='center'>
+                    <Button primary onClick={handleClick}>Get started</Button>
+                </HorizontalStack>
             </Box>
         </AlphaCard>
+        <div className='push'></div>
+        </>
     )
 }

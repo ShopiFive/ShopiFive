@@ -1,6 +1,6 @@
 import {useState, useCallback, useMemo, useEffect} from 'react';
 import { Autocomplete, Icon } from '@shopify/polaris';
-import { SearchMajor } from '@shopify/polaris-icons';
+import { SearchMinor } from '@shopify/polaris-icons';
 import "./SearchBar.scss";
 
 export default function SearchBar() {
@@ -59,7 +59,7 @@ export default function SearchBar() {
         <Autocomplete.TextField
             onChange={updateText}
             value={inputValue}
-            prefix={<Icon source={SearchMajor} color="base" accessibilityLabel="search field" />}
+            prefix={<Icon source={SearchMinor} color="base" accessibilityLabel="search field" />}
             placeholder='Go to...'
             autoComplete='off'
             selected={selectedItem ? selectedItem : undefined}

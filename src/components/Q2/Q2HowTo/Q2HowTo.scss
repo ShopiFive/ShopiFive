@@ -11,6 +11,9 @@
         width: 100%;
         background-color: $seconday-color-lightgray;
         border-radius: .5rem;
+        @media (min-width: 499px) {
+            height: 12rem;
+        }
     }
 
     &__text-container {
@@ -48,8 +51,8 @@
 }
 
 .Polaris-HorizontalStack {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
 }
 
 .Polaris-Icon {

@@ -16,7 +16,6 @@ export default function SearchBar() {
     );
     
     const [selectedOptions, setSelectedOptions] = useState([]);
-    const [selectedItem, setSelectedItem] = useState();
     const [inputValue, setInputValue] = useState('');
     const [options, setOptions] = useState(deselectedOptions);
     const [loading, setLoading] = useState(false);
@@ -52,7 +51,6 @@ export default function SearchBar() {
         })
         setSelectedOptions(selected)
         setInputValue(selectedText[0] || '')
-        setSelectedItem(selected[0])
     }, [options])
 
     const textField = (
@@ -62,7 +60,6 @@ export default function SearchBar() {
             prefix={<Icon source={SearchMinor} color="base" accessibilityLabel="search field" />}
             placeholder='Go to...'
             autoComplete='off'
-            selected={selectedItem ? selectedItem : undefined}
         />
     )
 

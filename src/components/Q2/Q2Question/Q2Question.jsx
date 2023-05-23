@@ -45,8 +45,9 @@ export default function Q2Question() {
                     onChange={handleSelectChange}
                     value={selected}
                 />
+                <div className='push'></div>
                 <div className='q2__text--btn'>
-                    <VerticalStack gap="2" inlineAlign="center">
+                    <VerticalStack gap="3" inlineAlign="center">
                         <Button primary disabled={!selected}>
                             Next
                         </Button>
@@ -56,6 +57,7 @@ export default function Q2Question() {
                     </VerticalStack>
                 </div>
             </Box>
+            <div className='push__footer'></div>
         </Box>
     )
 }

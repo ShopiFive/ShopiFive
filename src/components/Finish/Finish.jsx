@@ -6,7 +6,7 @@ import Header from "../Header/Header";
 import SearchBar from "../Search/SearchBar";
 import SetupGuide from "../SetupGuide/SetupGuide";
 
-export default function Finish() {
+export default function Finish({ onNext }) {
   const module = [
     { text: "Introduction", completed: true },
     { text: "Mission Statement", completed: true },
@@ -32,9 +32,13 @@ export default function Finish() {
         inputs={module}
         containerClassOne={"finish__guide"}
         containerClassTwo={"finish__listbullets"}
-        listItemClass={"finish__listitem"}
+        onNext={onNext}
       />
-      <Button primary>Finish</Button>
+      <div className="finish__cta">
+        <Button primary onClick={onNext}>
+          Finish
+        </Button>
+      </div>
     </div>
   );
 }

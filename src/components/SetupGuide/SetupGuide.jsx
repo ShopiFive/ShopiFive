@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SetupGuide.scss";
 import {
   MediaCard,
@@ -9,8 +9,13 @@ import {
   LegacyStack,
   Divider,
   Icon,
+  Link,
 } from "@shopify/polaris";
-import { ChevronRightMinor } from "@shopify/polaris-icons";
+import {
+  ChevronRightMinor,
+  CircleTickMinor,
+  ChevronDownMinor,
+} from "@shopify/polaris-icons";
 
 export default function Setup({
   title,
@@ -18,43 +23,100 @@ export default function Setup({
   progress,
   progressText,
   inputs,
+  containerClassOne,
+  containerClassTwo,
 }) {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
-    <Box className="setup">
-      <MediaCard title={title} description={description}>
-        <div className="setup__image" />
-      </MediaCard>
-      <div className="setup__progress">
-        <ProgressBar progress={progress} color="primary" />
-        <div className="setup__progresstext">
-          <Text variant="headingXs" as="h6" color="subdued">
-            {progressText}
-          </Text>
-        </div>
-        <div className="setup__guide">
-          <AlphaCard>
-            <LegacyStack vertical>
-              <ul className="setup__inputbox">
-                {inputs.map((items, index) => {
-                  return (
-                    <li className="setup__list" key={index}>
-                      <div className="setup__content">
-                        <div className="setup__textbox">
-                          <p>{items.text}</p>
+    <div className="setup">
+      <Box>
+        <MediaCard title={title} description={description}>
+          <div className="setup__image" />
+        </MediaCard>
+        <div className="setup__progress">
+          <ProgressBar progress={progress} color="primary" />
+          <div className="setup__progresstext">
+            <Text variant="headingXs" as="h6" color="subdued">
+              {progressText}
+            </Text>
+          </div>
+          <div className={`setup__guide ${containerClassOne}`}>
+            <AlphaCard>
+              <LegacyStack vertical>
+                <ul className="setup__inputbox">
+                  {inputs.map((items, index) => {
+                    const isCompleted = items.completed;
+                    const isOpen = openIndex === index;
+
+                    return (
+                      <li
+                        className={`setup__list ${
+                          isOpen ? "setup__list--expanded" : ""
+                        }`}
+                        key={index}
+                      >
+                        <div className="setup__content">
+                          <div
+                            className={`setup__textbox ${containerClassTwo}`}
+                          >
+                            {isCompleted && (
+                              <Icon source={CircleTickMinor} color="success" />
+                            )}
+                            <p>{items.text}</p>
+                          </div>
+                          {isCompleted ? (
+                            <div
+                              className="setup__icon"
+                              onClick={() => handleToggle(index)}
+                            >
+                              <Icon
+                                source={
+                                  isOpen ? ChevronDownMinor : ChevronRightMinor
+                                }
+                                color="subdued"
+                                className={`setup__arrow ${
+                                  isOpen ? "expanded" : ""
+                                }`}
+                              />
+                            </div>
+                          ) : (
+                            <div className="setup__icon">
+                              <Icon
+                                source={ChevronRightMinor}
+                                color="subdued"
+                              />
+                            </div>
+                          )}
                         </div>
-                        <div className="setup__icon">
-                          <Icon source={ChevronRightMinor} color="subdued" />
-                        </div>
-                      </div>
-                      <Divider />
-                    </li>
-                  );
-                })}
-              </ul>
-            </LegacyStack>
-          </AlphaCard>
+                        {isOpen && isCompleted && (
+                          <div className="setup__collapsible-msg">
+                            <div className="setup__collapsible-header">
+                              <p>Last edited 05/20/2023</p>
+                              <button className="setup__collapsible-button">
+                                Edit
+                              </button>
+                            </div>
+                            <p>
+                              Paw Print Post will create a world where every pet
+                              is celebrated and cherished
+                            </p>
+                          </div>
+                        )}
+                        <Divider />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </LegacyStack>
+            </AlphaCard>
+          </div>
         </div>
-      </div>
-    </Box>
+      </Box>
+    </div>
   );
 }

@@ -9,9 +9,7 @@ export default function Header({ titleName, text, color, showDivider }) {
         <Text variant="heading4xl" as="h1">
           {titleName}
         </Text>
-        <Text color={color} as="p">
-          {text}
-        </Text>
+        <p className="header__subtext">{text}</p>
       </AlphaCard>
       {showDivider && <Divider color="subdued" />}
     </div>

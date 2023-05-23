@@ -9,7 +9,6 @@ import {
   LegacyStack,
   Divider,
   Icon,
-  Link,
 } from "@shopify/polaris";
 import {
   ChevronRightMinor,
@@ -25,6 +24,7 @@ export default function Setup({
   inputs,
   containerClassOne,
   containerClassTwo,
+  onNext,
 }) {
   const [openIndex, setOpenIndex] = useState(null);
 

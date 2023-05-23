@@ -26,9 +26,9 @@ export default function MultiStepForm() {
       case 1:
         return <IntroductionForm onNext={handleNext} />;
       case 2:
-        return <Finish onNext={handleNext} />;
-      case 3:
         return <Q2 onNext={handleNext} />;
+      case 3:
+        return <Finish onNext={handleNext} />;
       // Add more cases for other steps
       default:
         return null;

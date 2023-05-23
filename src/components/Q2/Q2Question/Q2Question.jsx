@@ -2,8 +2,8 @@ import {Box, Button, Divider, Link, ProgressBar, Select, Text, VerticalStack} fr
 import {useState, useCallback} from 'react';
 import "./Q2Question.scss";
 
-export default function Q2Question() {
-    const [selected, setSelected] = useState({ onNext })
+export default function Q2Question({ onNext }) {
+    const [selected, setSelected] = useState()
 
     const handleSelectChange = useCallback((value) => setSelected(value),
     [],)
@@ -44,7 +44,6 @@ export default function Q2Question() {
                     options={options}
                     onChange={handleSelectChange}
                     value={selected}
-                    onNext={onNext}
                 />
                 <div className='push'></div>
                 <div className='q2__text--btn'>

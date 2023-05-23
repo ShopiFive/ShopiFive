@@ -17,7 +17,7 @@ export default function RadioContainer({
   subTitle,
   inputs,
   selectedResponse,
-  showBeginButton = false,
+  showBeginButton,
   onOptionChange,
   linkTitle,
   containerClass,
@@ -31,9 +31,6 @@ export default function RadioContainer({
     setSelectedOption(index);
     onOptionChange(option);
   };
-
-  const selectedInput =
-    selectedOption !== null ? inputs[selectedOption].response : "";
 
   return (
     <form className={`radio ${containerClass}`}>
@@ -71,27 +68,29 @@ export default function RadioContainer({
             })}
           </ul>
           <div className="radio__cta">
-            {selectedInput === selectedResponse ? (
-              showBeginButton && (
-                <>
-                  <p className="radio__msg">
-                    We recommend creating a new business plan.
-                  </p>
-                  <Button
-                    primary
-                    onClick={() => {
-                      navigate("/home/newplan");
-                    }}
-                  >
-                    Begin
-                  </Button>
-                </>
-              )
+            {selectedResponse === "No, I haven't." ? (
+              <>
+                {showBeginButton && (
+                  <>
+                    <p className="radio__msg">
+                      We recommend creating a new business plan.
+                    </p>
+                    <Button
+                      primary
+                      onClick={() => {
+                        navigate("/home/newplan");
+                      }}
+                    >
+                      Begin
+                    </Button>
+                  </>
+                )}
+              </>
             ) : (
               <Button
                 primary
                 disabled={selectedOption === null}
-                onClick={onNext}
+                onClick={() => onNext(selectedResponse)}
               >
                 Next
               </Button>

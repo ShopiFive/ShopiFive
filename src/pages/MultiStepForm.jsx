@@ -6,6 +6,8 @@ export default function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
 
+  console.log(formData);
+
   const handleNext = (data) => {
     // Update the form data with the current step's data
     setFormData((prevData) => ({

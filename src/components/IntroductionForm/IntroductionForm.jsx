@@ -48,6 +48,7 @@ export default function IntroductionForm({ onNext }) {
             subTitle="(You can always change this later)"
             inputs={businessStructureResponse}
             selectedResponse={selectedOption}
+            showBeginButton={false}
             onOptionChange={handleOptionChange}
             linkTitle="Save and Exit"
             containerClass="intro__radio"

@@ -1,11 +1,13 @@
 import {Box, Button, Divider, Link, ProgressBar, Select, Text, VerticalStack} from '@shopify/polaris';
 import {useState, useCallback} from 'react';
-import "./Q2.scss";
+import "./Q2Question.scss";
 
 export default function Q2Question() {
     const [selected, setSelected] = useState()
+
     const handleSelectChange = useCallback((value) => setSelected(value),
     [],)
+
     const options = [
         {label: 'Education', value: 'education'},
         {label: 'Clothing', value: 'clothing'},

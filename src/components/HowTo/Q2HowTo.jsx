@@ -1,6 +1,6 @@
 import {AlphaCard, Box, Button, HorizontalStack, Icon, List, Text} from '@shopify/polaris';
 import {ClockMajor} from '@shopify/polaris-icons'
-import Graphic from '../../../assets/images/how-to-write-a-business-plan.webp'
+import Graphic from '../../assets/images/how-to-write-a-business-plan.webp'
 import "./Q2HowTo.scss";
 
 export default function Q2HowTo({ handleClick }) {

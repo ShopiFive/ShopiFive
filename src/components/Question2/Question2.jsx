@@ -1,8 +1,8 @@
 import {Box, Button, Divider, Link, ProgressBar, Select, Text, VerticalStack} from '@shopify/polaris';
 import {useState, useCallback} from 'react';
-import "./Q2Question.scss";
+import "./Question2.scss";
 
-export default function Q2Question({ onNext }) {
+export default function Question2({ onNext }) {
     const [selected, setSelected] = useState()
 
     const handleSelectChange = useCallback((value) => setSelected(value),

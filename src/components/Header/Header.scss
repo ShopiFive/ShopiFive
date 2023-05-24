@@ -6,19 +6,6 @@
   .Polaris-Box {
     border-radius: 0;
     box-shadow: none;
-    margin-left: 0;
-    margin-right: 0;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  &__subtext {
-    color: #97999b;
-  }
-
-  .Polaris-Divider {
-    padding-bottom: 0;
   }
 }
 
@@ -28,18 +15,12 @@
   .Polaris-Box {
     border-radius: 0;
     box-shadow: none;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 1rem;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
-  }
-
-  &__items {
-    padding-top: 1rem;
+    gap: 1rem;
   }
 
   .Polaris-Link {
@@ -61,12 +42,11 @@
     height: 3.5rem;
     padding: 0.5rem;
     padding-inline: 0;
-    margin-top: 1rem;
   }
 
   &__bannertext {
     font-size: 0.7rem;
-    width: 12.5rem;
+    width: 13rem;
   }
 
   .Polaris-Button {

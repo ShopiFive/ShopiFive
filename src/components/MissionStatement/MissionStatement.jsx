@@ -4,7 +4,7 @@ import { VideoThumbnail, TextField, Button, ProgressBar } from "@shopify/polaris
 import thumbnailUrl from "./../../assets/images/share-image-generic-bd3ce342a910c2489b672b00e45c74b1b1548662c41448e456547fa5b6e0f585.png"
 import "./MissionStatement.scss"
 
-export default function MissionStatement() {
+export default function MissionStatement({onNext}) {
     const [missionStatement, setMissionStatement] = useState("");
     const navigate = useNavigate();
 
@@ -37,9 +37,7 @@ export default function MissionStatement() {
             <div className="mission-statement__cta">
                 <Button
                     primary
-                    onClick={() => {
-                        navigate("/home/vision");
-                    }}
+                    onClick={onNext}
                     disabled={!missionStatement}
                 >
                     Next

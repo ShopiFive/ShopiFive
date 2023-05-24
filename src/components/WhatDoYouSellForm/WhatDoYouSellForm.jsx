@@ -15,7 +15,7 @@ import {
 import { MobilePlusMajor } from '@shopify/polaris-icons';
 import "./WhatDoYouSellForm.scss";
 
-export default function WhatDoYouSellForm() {
+export default function WhatDoYouSellForm({onNext}) {
     const navigate = useNavigate();
 
 
@@ -98,7 +98,7 @@ export default function WhatDoYouSellForm() {
                     </ul>
                     <div className="form__footer">
                         <Text variant="headingXl" as="h4" className="form__footer-heading">
-                            What kind of services do you sell?
+                            What kind of services/products do you sell?
                         </Text>
                         <Divider />
                         <div className="add-service-wrapper">
@@ -121,25 +121,9 @@ export default function WhatDoYouSellForm() {
                         </div>
                     </div>
                     <div className="form__cta">
-                        {selectedInput === selectedResponse ? (
-                            <>
-                                <p className="form__msg">
-                                    We recommend creating a new business plan.
-                                </p>
-                                <Button
-                                    primary
-                                    onClick={() => {
-                                        navigate("/home/myplan/form");
-                                    }}
-                                >
-                                    Begin
-                                </Button>
-                            </>
-                        ) : (
-                            <Button primary disabled={!selectedService && !showNewServiceField}>
+                            <Button primary disabled={!selectedService && !showNewServiceField} onClick={onNext}>
                                 Next
                             </Button>
-                        )}
                         <Link className="form__cancel" to="/home">
                             Save and Exit
                         </Link>

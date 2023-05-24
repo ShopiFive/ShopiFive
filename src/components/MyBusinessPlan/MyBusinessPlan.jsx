@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AlphaCard, Button, Text } from "@shopify/polaris";
 import "./MyBusinessPlan.scss";
 import RadioContainer from "../RadioContainer/RadioContainer";
+import Graphic from "../../assets/images/simple-graphic.png"
 
 export default function MyBusinessPlan() {
   const navigate = useNavigate();
@@ -45,9 +46,7 @@ export default function MyBusinessPlan() {
               </li>
               <li>Finalise your business plan in as little as 7 days!</li>
             </ul>
-            <div className="card__graphic">
-              <p>On brand graphic</p>
-            </div>
+            <img className="card__graphic" src={Graphic} alt="industries" />
           </div>
           <div className="card__button">
             <Button primary onClick={handleGetStarted}>

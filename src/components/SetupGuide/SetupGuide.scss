@@ -9,7 +9,7 @@
   // ---- Polaris Box Styles -----
 
   .Polaris-Box {
-    // border: 1.5px solid #f1f2f3;
+    border: 1.5px solid #f1f2f3;
     padding: 0;
   }
 
@@ -29,7 +29,6 @@
     .Polaris-Text--headingMd {
       font-weight: 500;
       color: $primary-color-black;
-      padding-bottom: 0;
     }
 
     .Polaris-LegacyStack__Item p {
@@ -70,11 +69,10 @@
   &__inputbox {
     list-style-type: none;
     padding: 0;
-    padding-top: 1rem;
   }
 
   &__list {
-    // padding: 1rem 0 0;
+    padding: 1rem 0 0;
 
     &:last-child {
       .Polaris-Divider:last-child {

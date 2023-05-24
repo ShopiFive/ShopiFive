@@ -1,0 +1,62 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.q2 {
+    &__progress {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1.75rem;
+
+        .Polaris-ProgressBar {
+            height: 0.25rem;
+        }
+    }
+
+    &__text {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        &--btn {
+            display: flex;
+            justify-content: center;
+
+            .Polaris-Button {
+                width: 10rem;
+                padding-top: 0.85rem;
+                padding-bottom: 0.85rem;
+            }
+        }
+
+        .Polaris-Text--bodySm {
+            font-style: italic;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+    
+        .Polaris-Divider {
+            padding-bottom: 1rem;
+        }
+
+        .Polaris-Select {
+            color: $primary-color-gray;
+        
+            &__Backdrop {
+                background-color: $seconday-color-lightgray;
+                opacity: 15%;
+            }
+        
+            &__SelectedOption {
+                color: $primary-color-black;
+            }
+        }
+    }
+}
+
+.push {
+    height: 10rem;
+
+    &__footer {
+        height: 14rem;
+    }
+}

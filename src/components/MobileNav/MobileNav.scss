@@ -1,0 +1,64 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.mobilenav {
+  &__bar {
+    background-color: white;
+    padding: 0.5rem 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+  }
+
+  &__list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__items {
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 1.2rem;
+    height: 1.6rem;
+  }
+
+  &__text {
+    color: $seconday-color-lightgray;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: $primary-color-gray;
+  }
+
+  .active .mobilenav__icon svg {
+    fill: $primary-color-green;
+  }
+
+  .active .mobilenav__text {
+    color: $primary-color-green;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,47 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.finish {
+  height: 50rem;
+
+  .Polaris-Divider {
+    display: none;
+  }
+
+  &__progressbox {
+    background-color: $primary-color-white;
+    padding: 0 0 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .Polaris-ProgressBar--sizeMedium {
+    width: 90%;
+    height: 0.2rem;
+    margin: 0 auto;
+  }
+
+  &__guide {
+    height: 16rem;
+  }
+
+  &__listbullets::before {
+    content: "";
+    display: none;
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .Polaris-Button {
+    border: none;
+    width: 8rem;
+
+    .Polaris-Button__Content {
+      font-size: 0.8rem;
+    }
+  }
+}

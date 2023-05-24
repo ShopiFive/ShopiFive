@@ -2,67 +2,68 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.howto {
+  margin: 1rem 1rem 0;
+}
+
 .howto-card {
-    margin-left: 1rem;
-    margin-right: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
-    &__img-container {
-        height: 10rem;
-        width: 100%;
-        background-color: $seconday-color-lightgray;
-        border-radius: .5rem;
-        @media (min-width: 499px) {
-            height: 12rem;
-        }
+  &__img-container {
+    height: 10rem;
+    width: 100%;
+    background-color: $seconday-color-lightgray;
+    border-radius: 0.5rem;
+    @media (min-width: 499px) {
+      height: 12rem;
+    }
+  }
+
+  &__text-container {
+    padding: 1rem 1rem 0.5rem;
+
+    .Polaris-Box {
+      padding: 0;
+      padding-bottom: 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
 
-    &__text-container {
-        padding-top: 1rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 0.5rem;
-
-        .Polaris-Box {
-            padding: 0;
-            padding-bottom: 1rem;
-            margin-left: 1rem;
-            margin-right: 1rem;
-        }
-
-        .Polaris-Text--headingMd {
-            font-weight: normal;
-            font-size: 1.25rem;
-            padding-bottom: 1rem;
-        }
-
-        .Polaris-List {
-            padding-left: 3rem;
-            padding-bottom: 1rem;
-        
-            &__Item {
-                font-size: .875rem;
-            }
-        }
-
-        .Polaris-HorizontalStack {
-            padding-top: 2rem;
-            padding-bottom: 0.5rem;
-        }
-
-        .Polaris-Icon {
-            height: 2.25rem;
-            width: 2.25rem;
-            margin-right: 1rem;
-        }
-        
-        .Polaris-Button {
-            width: 10rem;
-            padding-top: 0.85rem;
-            padding-bottom: 0.85rem;
-        }
+    .Polaris-Text--headingMd {
+      font-weight: normal;
+      font-size: 1.25rem;
+      padding-bottom: 1rem;
     }
+
+    .Polaris-List {
+      padding-left: 3rem;
+      padding-bottom: 1rem;
+
+      &__Item {
+        font-size: 0.875rem;
+      }
+    }
+
+    .Polaris-HorizontalStack {
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .Polaris-Icon {
+      height: 2.25rem;
+      width: 2.25rem;
+      margin-right: 1rem;
+    }
+
+    .Polaris-Button {
+      width: 10rem;
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+    }
+  }
 }
 
 .push {
-    height: 12rem;
+  height: 12rem;
 }

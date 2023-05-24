@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AlphaCard, Button, Text } from "@shopify/polaris";
 import "./MyBusinessPlan.scss";
 import RadioContainer from "../RadioContainer/RadioContainer";
+import graphic from "../../assets/images/simple-graphic.png";
 
 export default function MyBusinessPlan() {
+  const navigate = useNavigate();
+
   const [openForm, setOpenForm] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -22,6 +26,10 @@ export default function MyBusinessPlan() {
     setSelectedOption(option);
   };
 
+  const handleOnNext = () => {
+    navigate("/home/myplan");
+  };
+
   return (
     <>
       <div className="card">
@@ -38,9 +46,11 @@ export default function MyBusinessPlan() {
               </li>
               <li>Finalise your business plan in as little as 7 days!</li>
             </ul>
-            <div className="card__graphic">
-              <p>On brand graphic</p>
-            </div>
+            <img
+              className="card__graphic"
+              src={graphic}
+              alt="sample graphic image"
+            />
           </div>
           <div className="card__button">
             <Button primary onClick={handleGetStarted}>
@@ -54,10 +64,12 @@ export default function MyBusinessPlan() {
           <RadioContainer
             title="Have you already created a business plan for your company?"
             inputs={getStartedResponse}
-            selectedResponse="No, I haven't."
+            selectedResponse={selectedOption}
             linkTitle="Cancel"
             selectedOption={selectedOption}
+            showBeginButton={true}
             onOptionChange={handleOptionChange}
+            onNext={handleOnNext}
           />
         </div>
       )}

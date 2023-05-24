@@ -23,10 +23,10 @@ export default function SubHeader({ text, link }) {
           <Banner onDismiss={() => {}}>
             <div className="subheader__banner">
               <p className="subheader__bannertext">
-                Extend your trial for <i>free</i> up to 3 months by creating a
-                business plan.
+                <i>StartupSuccess</i> is ready to launch. Begin building your
+                business plan with just 5-10 minutes a day!
               </p>
-              <Button onClick={handleButtonClick}>Lean More</Button>
+              <Button onClick={handleButtonClick}>Get Started</Button>
             </div>
           </Banner>
         </div>

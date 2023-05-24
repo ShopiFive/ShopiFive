@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import IntroductionForm from "../components/IntroductionForm/IntroductionForm";
 import Finish from "../components/Finish/Finish";
+import Q2 from "../components/Q2/Q2";
 
 export default function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
+
+  console.log(formData);
 
   const handleNext = (data) => {
     // Update the form data with the current step's data
@@ -23,6 +26,8 @@ export default function MultiStepForm() {
       case 1:
         return <IntroductionForm onNext={handleNext} />;
       case 2:
+        return <Q2 onNext={handleNext} />;
+      case 3:
         return <Finish onNext={handleNext} />;
       // Add more cases for other steps
       default:

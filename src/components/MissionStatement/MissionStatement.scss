@@ -1,0 +1,81 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.mission-statement {
+    background-color: #FFFFFF;
+    padding: 1rem 1rem 80px 1rem;
+    overflow: auto;
+
+    &__progressbox {
+        margin-bottom: 1rem;
+    }
+
+    .Polaris-ProgressBar{
+        height: 2px;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        margin-Left: "2rem";
+        margin-Right: "2rem";
+
+        &.custom {
+            font-size: 15px;
+            font-weight: 400;
+            // margin-bottom: 2rem; 
+            margin-top: 2rem;
+        }
+    }
+
+    p {
+        font-size: 0.875rem;
+        color: #212B36;
+        margin-bottom: 0.5rem;
+        margin-Left: "2rem";
+        margin-Right: "2rem";
+        font-weight: 400;
+        font-size: 14px;
+
+        &.subdued {
+            color: #637381;
+            font-weight: 400;
+            font-size: 12px;
+        }
+    }
+
+    .Polaris-VideoThumbnail {
+        margin-top: 2rem;
+        margin-left: 15rem;
+        margin-right: 15rem;
+    }
+
+    .custom-textfield {
+        width: 348px;
+        height: 197px;
+    }
+
+    &__cta {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        & .Polaris-Button {
+            border: none;
+            width: 8rem;
+
+            .Polaris-Button__Content {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    &__cancel {
+        color: #000;
+        text-decoration: underline;
+    }
+}

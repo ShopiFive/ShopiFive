@@ -10,7 +10,7 @@
 - **Sheila Ho** (Web Development)
 - **Nora Bennett** (UI/UX design)
 - **Rowan Lees** (Data Science)
-- **Jeremy** (UI/UX design)
+- **Jeremy Turco** (UI/UX design)
 - **Elizabeth Atkinson** (Web Development)
 
 ## Tech Stack:

@@ -34,7 +34,7 @@ Redesign the business plan template that shopify has for users (currently a goog
 
 ## Run Locally
 
-Start the serve
+Start the server
 
 ```bash
   npm run dev

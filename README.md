@@ -40,6 +40,8 @@ Start the server
   npm run dev
 ```
 
+Please view app at responsive 375px.
+
 ## Authors
 
 - [@Sheilsh](https://github.com/Sheilsh)

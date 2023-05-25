@@ -50,7 +50,7 @@ export default function VisionStatement({ onNext }) {
         value={missionStatement}
         onChange={handleInputChange}
         multiline={3}
-        placeholder="Write your vision statement here"
+        placeholder="Our vision is..."
         className="custom-textfield"
       />
       <div className="mission-statement__cta">

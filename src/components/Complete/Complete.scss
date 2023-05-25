@@ -1,0 +1,95 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.complete {
+  height: 55rem;
+  width: 100%;
+  background-color: $primary-color-white;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Polaris-Text--heading3xl {
+    text-align: center;
+    width: 15rem;
+  }
+
+  &__headerimg {
+    width: 18rem;
+    height: 10rem;
+    margin-left: 0.5rem;
+  }
+
+  &__image {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__streak {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__subcontent {
+    &--time,
+    &--coins {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--coins {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  .Polaris-Text--headingMd {
+    font-weight: 500;
+  }
+
+  &__coin {
+    font-size: 1.2rem;
+    color: #2463bc;
+  }
+  &__tip {
+    width: 12rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64696c;
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .Polaris-Button {
+    border: none;
+    width: 11rem;
+
+    .Polaris-Button__Content {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+
+  &__cancel {
+    text-decoration: underline;
+    color: $primary-color-black;
+  }
+}

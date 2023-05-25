@@ -1,0 +1,77 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  .Polaris-Box {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &__subtext {
+    color: #97999b;
+    padding-top: 0.2rem;
+  }
+}
+
+.subheader {
+  margin-bottom: 1rem;
+
+  .Polaris-Box {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .Polaris-Link {
+    text-decoration: none;
+  }
+
+  &__banner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+  }
+
+  .Polaris-Banner {
+    background-color: black;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    width: 21.5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    padding-inline: 0;
+  }
+
+  &__bannertext {
+    font-size: 0.7rem;
+    width: 12.5rem;
+  }
+
+  .Polaris-Button {
+    all: unset;
+    background-color: $button-color-darkgreen;
+    color: $primary-color-white;
+    border: none;
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 6rem;
+    padding: 0;
+
+    .Polaris-Button__Text {
+      font-size: 0.7rem;
+    }
+  }
+
+  .Polaris-Icon,
+  .Polaris-Button--iconOnly {
+    display: none;
+  }
+}

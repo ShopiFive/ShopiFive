@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+
+.search {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    background-color: $primary-color-white;
+
+    .Polaris-TextField {
+        padding-top: 0.15rem;
+        padding-bottom: 0.15rem;
+    
+        &__Backdrop {
+            background-color: $seconday-color-lightgray;
+            opacity: 15%;
+            border: none;
+            border-radius: 0.5rem;
+        }
+    }
+}

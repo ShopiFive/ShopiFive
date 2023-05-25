@@ -1,0 +1,54 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.card {
+  margin: 2rem auto 0;
+  width: 22rem;
+
+  .Polaris-Box {
+    display: flex;
+    flex-direction: column;
+    height: 22rem;
+    padding: 1.2rem;
+  }
+
+  .Polaris-Text--headingXl {
+    font-weight: 400;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__list {
+    width: 15rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  &__graphic {
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    & p {
+      width: 5rem;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  .Polaris-Button {
+    border: none;
+    width: 8rem;
+
+    .Polaris-Button__Content {
+      font-size: 0.8rem;
+    }
+  }
+}

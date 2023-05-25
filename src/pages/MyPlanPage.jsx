@@ -9,7 +9,7 @@ export default function MyPlanPage() {
       <SearchBar />
       <Header
         titleName="My Business Plan"
-        text="Subhead here"
+        text="Get started"
         color="subdued"
         showDivider={true}
       />

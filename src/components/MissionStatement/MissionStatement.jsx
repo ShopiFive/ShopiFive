@@ -49,7 +49,7 @@ export default function MissionStatement({ onNext }) {
         value={missionStatement}
         onChange={handleInputChange}
         multiline={3}
-        placeholder="Write your mission statement here"
+        placeholder="Our mission is..."
         className="custom-textfield"
       />
       <div className="mission-statement__cta">

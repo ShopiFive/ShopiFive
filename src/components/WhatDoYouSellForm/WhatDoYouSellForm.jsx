@@ -19,6 +19,7 @@ export default function WhatDoYouSellForm({ onNext }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showNewServiceField, setShowNewServiceField] = useState(false);
   const [selectedService, setSelectedService] = useState();
+  const [selectedService2, setSelectedService2] = useState();
   const [value, setValue] = useState("");
 
   const handleTextChange = useCallback((value) => setValue(value), []);
@@ -29,6 +30,11 @@ export default function WhatDoYouSellForm({ onNext }) {
 
   const handleServiceChange = useCallback(
     (value) => setSelectedService(value),
+    []
+  );
+
+  const handleServiceChange2 = useCallback(
+    (value) => setSelectedService2(value),
     []
   );
 
@@ -91,7 +97,7 @@ export default function WhatDoYouSellForm({ onNext }) {
           </ul>
           <div className="form__footer">
             <Text variant="headingXl" as="h4" className="form__footer-heading">
-              What kind of services/products do you sell?
+              What kind of services do you sell?
             </Text>
             <Divider />
             <div className="add-service-wrapper">
@@ -110,10 +116,11 @@ export default function WhatDoYouSellForm({ onNext }) {
               </div>
               {showNewServiceField && (
                 <div className="new-service-field">
-                  <TextField
-                    placeholder="Type here..."
-                    value={value}
-                    onChange={handleTextChange}
+                  <Select
+                    placeholder="Search or select a service"
+                    options={serviceOptions}
+                    onChange={handleServiceChange2}
+                    value={selectedService2}
                   />
                   <Button plain onClick={() => setShowNewServiceField(false)}>
                     Cancel

@@ -38,7 +38,7 @@ export default function CompleteInfo({ onNext }) {
               Time
             </Text>
             <img className="complete__image" src={clock} alt="clock image" />
-            <p>Under 5min</p>
+            <p>Under 5 min</p>
           </div>
         </div>
         <div className="complete__subcontent complete__subcontent--coins">

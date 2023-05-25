@@ -12,6 +12,7 @@ function App() {
     <BrowserRouter>
       <MobileNav />
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/home/myplan" element={<MyPlanPage />} />
         <Route path="/home/newplan" element={<MultiStepForm />} />
